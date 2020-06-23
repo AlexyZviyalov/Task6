@@ -12,8 +12,8 @@
 #import "IconViewRound.h"
 
 int const ICON_SIZE = 70;
-int const BUTTON_WIDTH = 300;
-int const BUTTON_HEIGH = 45;
+int const BUTTON_WIDTH = 290;
+int const BUTTON_HEIGH = 50;
 
 @interface IconViewController ()
 @property (nonatomic, strong) IconViewTriangle *iconViewTriangle;
@@ -67,7 +67,7 @@ int const BUTTON_HEIGH = 45;
     
     [self.startButton setTitle:@"START" forState:UIControlStateNormal];
     [self.startButton setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
-    [self.startButton setBackgroundColor:UIColor.yellowColor];
+    [self.startButton setBackgroundColor:[UIColor colorWithRed:249.0/256.0 green:204.0/256.0 blue:120.0/256.9 alpha:1]];
     self.startButton.layer.cornerRadius = 20;
     [self.startButton addTarget:self action:@selector(startButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -79,7 +79,7 @@ int const BUTTON_HEIGH = 45;
 }
 
 -(void)setupLabel {
-    self.readyLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.iconViewSquare.frame) - BUTTON_WIDTH / 2, CGRectGetMaxY(self.iconViewSquare.frame) - 180, BUTTON_WIDTH, BUTTON_HEIGH)];
+    self.readyLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.iconViewSquare.frame) - BUTTON_WIDTH / 2, CGRectGetMaxY(self.iconViewSquare.frame) - 190, BUTTON_WIDTH, BUTTON_HEIGH)];
     [self.readyLabel setText:@"Are you ready?"];
     [self.readyLabel setTextAlignment:NSTextAlignmentCenter];
     [self.readyLabel setFont: [self.readyLabel.font fontWithSize: 22]];

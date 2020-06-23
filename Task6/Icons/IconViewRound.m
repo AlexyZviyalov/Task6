@@ -14,8 +14,8 @@
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetLineWidth(context, 0.001 * rect.size.width);
-    CGContextSetRGBStrokeColor(context, 100, 0, 0, 1);
-     [[UIColor redColor] setFill];
+    CGContextSetRGBStrokeColor(context, 238.0/256, 104.0/256.0, 106.0/256.0, 1);
+     [[UIColor colorWithRed:238.0/256.0 green:104.0/256.0 blue:106.0/256.9 alpha:1] setFill];
     
     CGContextAddEllipseInRect(context, rect);
     CGContextStrokePath(context);
