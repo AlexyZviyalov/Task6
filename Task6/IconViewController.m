@@ -35,7 +35,56 @@ int const BUTTON_HEIGH = 50;
     [self setupIconViewRound];
     [self setupStartButton];
     [self setupLabel];
+    
+    UITapGestureRecognizer *singleTapOnCircle = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapOnCirlcle:)];
+    [self.iconViewRound addGestureRecognizer:singleTapOnCircle];
+    
+     
+    UITapGestureRecognizer *singleTapOnSquare = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapOnSquare:)];
+    [self.iconViewSquare addGestureRecognizer:singleTapOnSquare];
+    
+    UITapGestureRecognizer *singleTapOnTriangle = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapOnTriangle:)];
+       [self.iconViewTriangle addGestureRecognizer:singleTapOnTriangle];
   
+    
+}
+
+-(void)handleSingleTapOnCirlcle: (UITapGestureRecognizer *) recoglizer {
+   CGPoint location = [recoglizer locationInView:[recoglizer.view superview]];
+    NSLog (@"TAP O TAP O TAP O");
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        self.iconViewRound.transform = CGAffineTransformScale(self.iconViewSquare.transform, 1.0, 2.0);
+    }];
+}
+
+-(void)handleSingleTapOnSquare: (UITapGestureRecognizer *) recoglizer {
+   CGPoint location = [recoglizer locationInView:[recoglizer.view superview]];
+    NSLog (@"TAP Q TAP Q TAP Q");
+    
+    [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionAutoreverse animations:^{
+        self.iconViewSquare.frame = CGRectMake(self.view.bounds.size.width / 2 - ICON_SIZE / 2, 200 + (ICON_SIZE * 0.1) , ICON_SIZE, ICON_SIZE);
+    } completion:^(BOOL finished) {
+        self.iconViewSquare.frame = CGRectMake(self.view.bounds.size.width / 2 - ICON_SIZE / 2, 200, ICON_SIZE, ICON_SIZE);;
+        [UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionAutoreverse animations:^{
+            self.iconViewSquare.frame = CGRectMake(self.view.bounds.size.width / 2 - ICON_SIZE / 2, 200 - (ICON_SIZE * 0.1) , ICON_SIZE, ICON_SIZE);
+        } completion:^(BOOL finished) {
+            self.iconViewSquare.frame = CGRectMake(self.view.bounds.size.width / 2 - ICON_SIZE / 2, 200, ICON_SIZE, ICON_SIZE);;
+        }];
+    }];
+    
+    
+    
+}
+
+//self.iconViewTriangle.frame = CGRectMake(250, 200, ICON_SIZE, ICON_SIZE)
+-(void)handleSingleTapOnTriangle: (UITapGestureRecognizer *) recoglizer {
+   CGPoint location = [recoglizer locationInView:[recoglizer.view superview]];
+    NSLog (@"TAP T TAP T TAP T");
+    
+    [UIView animateWithDuration:1.0 animations:^{
+        self.iconViewTriangle.transform = CGAffineTransformRotate(self.iconViewTriangle.transform, M_PI / 6);
+    }];
     
 }
 
