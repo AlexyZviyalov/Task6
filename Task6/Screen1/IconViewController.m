@@ -25,9 +25,10 @@ int const BUTTON_HEIGH = 50;
 
 @implementation IconViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.view.backgroundColor = UIColor.whiteColor;
     
     [self setupIconViewTriangle];
@@ -45,7 +46,6 @@ int const BUTTON_HEIGH = 50;
     
     UITapGestureRecognizer *singleTapOnTriangle = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapOnTriangle:)];
        [self.iconViewTriangle addGestureRecognizer:singleTapOnTriangle];
-  
     
 }
 
@@ -53,9 +53,24 @@ int const BUTTON_HEIGH = 50;
    CGPoint location = [recoglizer locationInView:[recoglizer.view superview]];
     NSLog (@"TAP O TAP O TAP O");
     
-    [UIView animateWithDuration:1.0 animations:^{
-        self.iconViewRound.transform = CGAffineTransformScale(self.iconViewSquare.transform, 1.0, 2.0);
+    [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionAutoreverse animations:^{
+        self.iconViewRound.frame = CGRectMake(50 - ICON_SIZE*0.1/2, 200 - ICON_SIZE*0.1/2, ICON_SIZE+ICON_SIZE*0.1, ICON_SIZE+ICON_SIZE*0.1);
+    } completion:^(BOOL finished) {
+        self.iconViewRound.frame = CGRectMake(50, 200, ICON_SIZE, ICON_SIZE);
+        [UIView animateWithDuration:0.5 delay:0.0 options:UIViewAnimationOptionAutoreverse animations:^{
+           self.iconViewRound.frame = CGRectMake(50 + ICON_SIZE*0.1/2, 200 + ICON_SIZE*0.1/2, ICON_SIZE-ICON_SIZE*0.1, ICON_SIZE-ICON_SIZE*0.1);
+       } completion:^(BOOL finished) {
+           self.iconViewRound.frame = CGRectMake(50, 200, ICON_SIZE, ICON_SIZE);
+          
+       }];
     }];
+    
+    
+    
+    
+//    [UIView animateWithDuration:1.0 animations:^{
+//        self.iconViewRound.transform = CGAffineTransformScale(self.iconViewSquare.transform, 1.0, 2.0);
+//    }];
 }
 
 -(void)handleSingleTapOnSquare: (UITapGestureRecognizer *) recoglizer {
@@ -72,7 +87,6 @@ int const BUTTON_HEIGH = 50;
             self.iconViewSquare.frame = CGRectMake(self.view.bounds.size.width / 2 - ICON_SIZE / 2, 200, ICON_SIZE, ICON_SIZE);;
         }];
     }];
-    
     
     
 }

@@ -8,6 +8,7 @@
 
 #import "SceneDelegate.h"
 #import "IconViewController.h"
+#import "ViewControllerWithTable.h"
 
 @interface SceneDelegate ()
 
@@ -22,8 +23,25 @@
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
     UIWindow *window = [[UIWindow alloc] initWithWindowScene:(UIWindowScene *)scene];
     window.rootViewController = [[IconViewController alloc] init];
+
     [window makeKeyAndVisible];
-    self.window = window;
+    
+  
+ 
+    //    window.rootViewController = [self rootViewController];
+}
+
+-(UIViewController *) rootViewController {
+    
+    UIViewController *iconViewController = [UIViewController new];
+    UITabBarController *tabBarController = [UITabBarController new];
+    
+    UINavigationController *firstViewController = [[UINavigationController alloc] initWithRootViewController: iconViewController];
+    
+    tabBarController.viewControllers = @[firstViewController];
+  
+    
+    return iconViewController;
 }
 
 

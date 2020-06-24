@@ -16,6 +16,7 @@
 		7708D8B924A10B1200A8FC59 /* IconViewTriangle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708D8B824A10B1200A8FC59 /* IconViewTriangle.m */; };
 		7708D8BC24A1513D00A8FC59 /* IconViewSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708D8BB24A1513D00A8FC59 /* IconViewSquare.m */; };
 		7708D8C024A15D8200A8FC59 /* IconViewRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708D8BF24A15D8200A8FC59 /* IconViewRound.m */; };
+		77A9D2F224A27FC9000FCD01 /* ViewControllerWithTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		7708D8BB24A1513D00A8FC59 /* IconViewSquare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconViewSquare.m; sourceTree = "<group>"; };
 		7708D8BE24A15D8200A8FC59 /* IconViewRound.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IconViewRound.h; sourceTree = "<group>"; };
 		7708D8BF24A15D8200A8FC59 /* IconViewRound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconViewRound.m; sourceTree = "<group>"; };
+		77A9D2F024A27FC9000FCD01 /* ViewControllerWithTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerWithTable.h; sourceTree = "<group>"; };
+		77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerWithTable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,14 +79,13 @@
 				7708D8A924A0B45F00A8FC59 /* LaunchScreen.storyboard */,
 				7708D8AC24A0B45F00A8FC59 /* Info.plist */,
 				7708D8AD24A0B45F00A8FC59 /* main.m */,
-				7708D8B424A0B72600A8FC59 /* IconViewController.h */,
-				7708D8B524A0B72600A8FC59 /* IconViewController.m */,
-				7708D8BD24A1514B00A8FC59 /* Icons */,
+				77A9D2EE24A27EF9000FCD01 /* Screen1 */,
+				77A9D2EF24A27F4F000FCD01 /* Screen2 */,
 			);
 			path = Task6;
 			sourceTree = "<group>";
 		};
-		7708D8BD24A1514B00A8FC59 /* Icons */ = {
+		7708D8BD24A1514B00A8FC59 /* IconsViews */ = {
 			isa = PBXGroup;
 			children = (
 				7708D8BA24A1513D00A8FC59 /* IconViewSquare.h */,
@@ -93,7 +95,26 @@
 				7708D8BE24A15D8200A8FC59 /* IconViewRound.h */,
 				7708D8BF24A15D8200A8FC59 /* IconViewRound.m */,
 			);
-			path = Icons;
+			path = IconsViews;
+			sourceTree = "<group>";
+		};
+		77A9D2EE24A27EF9000FCD01 /* Screen1 */ = {
+			isa = PBXGroup;
+			children = (
+				7708D8B424A0B72600A8FC59 /* IconViewController.h */,
+				7708D8B524A0B72600A8FC59 /* IconViewController.m */,
+				7708D8BD24A1514B00A8FC59 /* IconsViews */,
+			);
+			path = Screen1;
+			sourceTree = "<group>";
+		};
+		77A9D2EF24A27F4F000FCD01 /* Screen2 */ = {
+			isa = PBXGroup;
+			children = (
+				77A9D2F024A27FC9000FCD01 /* ViewControllerWithTable.h */,
+				77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */,
+			);
+			path = Screen2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +193,7 @@
 				7708D8C024A15D8200A8FC59 /* IconViewRound.m in Sources */,
 				7708D8BC24A1513D00A8FC59 /* IconViewSquare.m in Sources */,
 				7708D8B624A0B72600A8FC59 /* IconViewController.m in Sources */,
+				77A9D2F224A27FC9000FCD01 /* ViewControllerWithTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
