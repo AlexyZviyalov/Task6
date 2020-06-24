@@ -11,6 +11,8 @@
 #import "IconViewSquare.h"
 #import "IconViewRound.h"
 #import "ViewControllerWithTable.h"
+#import "GalleryViewController.h"
+#import "AboutViewController.h"
 
 int const ICON_SIZE = 70;
 int const BUTTON_WIDTH = 290;
@@ -131,13 +133,21 @@ int const BUTTON_HEIGH = 50;
     [self.view addSubview:self.startButton];
 }
 
+#pragma mark - TabBarController
 -(void)startButtonDidTap: (UIButton *)button {
     NSLog(@"LETS START");
     
-     
-//    ViewControllerWithTable *next = ViewControllerWithTable
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    UIViewController *viewControllerWithTable = [[ViewControllerWithTable alloc] init];
+    UIViewController *galleryViewController = [[GalleryViewController alloc] init];
+    UIViewController *aboutViewController = [[AboutViewController alloc] init];
+    tabBarController.viewControllers = @[ viewControllerWithTable, galleryViewController, aboutViewController];
+    viewControllerWithTable.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Info" image:[UIImage systemImageNamed:@"list.bullet"] tag:0];
+    galleryViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Gallery" image:[UIImage systemImageNamed:@"photo.on.rectangle"] tag:0];
+    aboutViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Info" image:[UIImage systemImageNamed:@"house"] tag:0];
     
-//    [self.navigationController pushViewController: tabbarcont animated:YES]; сделать проперти
+    [self.navigationController pushViewController:tabBarController animated:YES];
+
 }
 
 #pragma mark - Label

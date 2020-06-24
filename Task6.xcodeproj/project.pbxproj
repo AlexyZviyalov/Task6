@@ -17,6 +17,8 @@
 		7708D8BC24A1513D00A8FC59 /* IconViewSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708D8BB24A1513D00A8FC59 /* IconViewSquare.m */; };
 		7708D8C024A15D8200A8FC59 /* IconViewRound.m in Sources */ = {isa = PBXBuildFile; fileRef = 7708D8BF24A15D8200A8FC59 /* IconViewRound.m */; };
 		77A9D2F224A27FC9000FCD01 /* ViewControllerWithTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */; };
+		77A9D2F624A3F128000FCD01 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2F524A3F128000FCD01 /* GalleryViewController.m */; };
+		77A9D2FA24A3FA29000FCD01 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2F924A3FA29000FCD01 /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,10 @@
 		7708D8BF24A15D8200A8FC59 /* IconViewRound.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IconViewRound.m; sourceTree = "<group>"; };
 		77A9D2F024A27FC9000FCD01 /* ViewControllerWithTable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerWithTable.h; sourceTree = "<group>"; };
 		77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerWithTable.m; sourceTree = "<group>"; };
+		77A9D2F424A3F128000FCD01 /* GalleryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GalleryViewController.h; sourceTree = "<group>"; };
+		77A9D2F524A3F128000FCD01 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
+		77A9D2F824A3FA29000FCD01 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		77A9D2F924A3FA29000FCD01 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,8 @@
 				7708D8AD24A0B45F00A8FC59 /* main.m */,
 				77A9D2EE24A27EF9000FCD01 /* Screen1 */,
 				77A9D2EF24A27F4F000FCD01 /* Screen2 */,
+				77A9D2F324A3F0F3000FCD01 /* Screen3 */,
+				77A9D2F724A3F9DB000FCD01 /* Screen4 */,
 			);
 			path = Task6;
 			sourceTree = "<group>";
@@ -115,6 +123,24 @@
 				77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */,
 			);
 			path = Screen2;
+			sourceTree = "<group>";
+		};
+		77A9D2F324A3F0F3000FCD01 /* Screen3 */ = {
+			isa = PBXGroup;
+			children = (
+				77A9D2F424A3F128000FCD01 /* GalleryViewController.h */,
+				77A9D2F524A3F128000FCD01 /* GalleryViewController.m */,
+			);
+			path = Screen3;
+			sourceTree = "<group>";
+		};
+		77A9D2F724A3F9DB000FCD01 /* Screen4 */ = {
+			isa = PBXGroup;
+			children = (
+				77A9D2F824A3FA29000FCD01 /* AboutViewController.h */,
+				77A9D2F924A3FA29000FCD01 /* AboutViewController.m */,
+			);
+			path = Screen4;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,8 +218,10 @@
 				7708D8B924A10B1200A8FC59 /* IconViewTriangle.m in Sources */,
 				7708D8C024A15D8200A8FC59 /* IconViewRound.m in Sources */,
 				7708D8BC24A1513D00A8FC59 /* IconViewSquare.m in Sources */,
+				77A9D2FA24A3FA29000FCD01 /* AboutViewController.m in Sources */,
 				7708D8B624A0B72600A8FC59 /* IconViewController.m in Sources */,
 				77A9D2F224A27FC9000FCD01 /* ViewControllerWithTable.m in Sources */,
+				77A9D2F624A3F128000FCD01 /* GalleryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
