@@ -10,6 +10,7 @@
 #import "IconViewTriangle.h"
 #import "IconViewSquare.h"
 #import "IconViewRound.h"
+#import "ViewControllerWithTable.h"
 
 int const ICON_SIZE = 70;
 int const BUTTON_WIDTH = 290;
@@ -40,15 +41,17 @@ int const BUTTON_HEIGH = 50;
     UITapGestureRecognizer *singleTapOnCircle = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapOnCirlcle:)];
     [self.iconViewRound addGestureRecognizer:singleTapOnCircle];
     
-     
     UITapGestureRecognizer *singleTapOnSquare = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapOnSquare:)];
     [self.iconViewSquare addGestureRecognizer:singleTapOnSquare];
     
     UITapGestureRecognizer *singleTapOnTriangle = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTapOnTriangle:)];
        [self.iconViewTriangle addGestureRecognizer:singleTapOnTriangle];
     
+    [self.navigationController setNavigationBarHidden:YES];
+    
 }
 
+#pragma mark - TapRecognizer
 -(void)handleSingleTapOnCirlcle: (UITapGestureRecognizer *) recoglizer {
    CGPoint location = [recoglizer locationInView:[recoglizer.view superview]];
     NSLog (@"TAP O TAP O TAP O");
@@ -64,13 +67,6 @@ int const BUTTON_HEIGH = 50;
           
        }];
     }];
-    
-    
-    
-    
-//    [UIView animateWithDuration:1.0 animations:^{
-//        self.iconViewRound.transform = CGAffineTransformScale(self.iconViewSquare.transform, 1.0, 2.0);
-//    }];
 }
 
 -(void)handleSingleTapOnSquare: (UITapGestureRecognizer *) recoglizer {
@@ -87,11 +83,8 @@ int const BUTTON_HEIGH = 50;
             self.iconViewSquare.frame = CGRectMake(self.view.bounds.size.width / 2 - ICON_SIZE / 2, 200, ICON_SIZE, ICON_SIZE);;
         }];
     }];
-    
-    
 }
 
-//self.iconViewTriangle.frame = CGRectMake(250, 200, ICON_SIZE, ICON_SIZE)
 -(void)handleSingleTapOnTriangle: (UITapGestureRecognizer *) recoglizer {
    CGPoint location = [recoglizer locationInView:[recoglizer.view superview]];
     NSLog (@"TAP T TAP T TAP T");
@@ -99,22 +92,21 @@ int const BUTTON_HEIGH = 50;
     [UIView animateWithDuration:1.0 animations:^{
         self.iconViewTriangle.transform = CGAffineTransformRotate(self.iconViewTriangle.transform, M_PI / 6);
     }];
-    
 }
+
+#pragma mark - ViewsSetup
 
 - (void)setupIconViewTriangle {
     self.iconViewTriangle = [[IconViewTriangle alloc] initWithFrame:CGRectMake(250, 200, ICON_SIZE, ICON_SIZE)];
     self.iconViewTriangle.backgroundColor = UIColor.whiteColor;
 
     [self.view addSubview:self.iconViewTriangle];
-
 }
 
 - (void)setupIconViewSquare {
     self.iconViewSquare = [[IconViewSquare alloc] initWithFrame:CGRectMake(self.view.bounds.size.width / 2 - ICON_SIZE / 2, 200, ICON_SIZE, ICON_SIZE)];
     self.iconViewSquare.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:self.iconViewSquare];
-
 }
 
 - (void)setupIconViewRound {
@@ -123,6 +115,8 @@ int const BUTTON_HEIGH = 50;
     [self.view addSubview:self.iconViewRound];
 
 }
+
+#pragma mark - StartButton
 
 - (void)setupStartButton {
     self.startButton = [[UIButton alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.iconViewSquare.frame) - BUTTON_WIDTH / 2, CGRectGetMaxY(self.iconViewSquare.frame) + 200, BUTTON_WIDTH, BUTTON_HEIGH)];
@@ -139,8 +133,14 @@ int const BUTTON_HEIGH = 50;
 
 -(void)startButtonDidTap: (UIButton *)button {
     NSLog(@"LETS START");
+    
+     
+//    ViewControllerWithTable *next = ViewControllerWithTable
+    
+//    [self.navigationController pushViewController: tabbarcont animated:YES]; сделать проперти
 }
 
+#pragma mark - Label
 -(void)setupLabel {
     self.readyLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.iconViewSquare.frame) - BUTTON_WIDTH / 2, CGRectGetMaxY(self.iconViewSquare.frame) - 190, BUTTON_WIDTH, BUTTON_HEIGH)];
     [self.readyLabel setText:@"Are you ready?"];
