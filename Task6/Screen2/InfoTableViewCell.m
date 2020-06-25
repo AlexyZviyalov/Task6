@@ -7,12 +7,9 @@
 //
 
 #import "InfoTableViewCell.h"
-#import "ViewControllerWithTable.h"
 
 @interface InfoTableViewCell ()
 @property (nonatomic, strong) UILabel*titleLabel;
-@property (nonatomic, strong) UIView *completedIndicatorView;
-
 
 @end
 
@@ -31,21 +28,8 @@
     [self setupViews];
 }
 
--(void)configureWithInfoTableViewCell:(ViewControllerWithTable *)infoItem{
-    self.titleLabel.text = infoItem.title;
-}
 
 -(void)setupViews{
-    self.completedIndicatorView = [[UIView alloc] init];
-    self.completedIndicatorView.backgroundColor = [UIColor whiteColor];
-    self.completedIndicatorView.translatesAutoresizingMaskIntoConstraints = NO;
-    [self addSubview:self.completedIndicatorView];
-    [NSLayoutConstraint activateConstraints:@[
-        [self.completedIndicatorView.leadingAnchor constraintEqualToAnchor:self.leadingAnchor],
-        [self.completedIndicatorView.topAnchor constraintEqualToAnchor:self.topAnchor],
-        [self.completedIndicatorView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor],
-        [self.completedIndicatorView.widthAnchor constraintEqualToConstant:5.0]
-    ]];
     
     self.titleLabel =[[UILabel alloc]init];
     self.titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
