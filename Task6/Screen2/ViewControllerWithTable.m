@@ -8,10 +8,14 @@
 
 #import "ViewControllerWithTable.h"
 #import "InfoTableViewCell.h"
+#import <Photos/Photos.h>
 
 @interface ViewControllerWithTable ()
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *header;
+
+@property(nonatomic , strong) PHFetchResult *assetsFetchResults;
+@property(nonatomic , strong) PHCachingImageManager *imageManager;
 
 @end
 
@@ -23,6 +27,11 @@
     self.view.backgroundColor = UIColor.whiteColor;
     [self setupHeader];
     [self setupTable];
+    
+    PHFetchOptions *options = [[PHFetchOptions alloc] init];
+    options.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:NO]];
+//    self.assetsFetchResults = [PHAsset fetchAssetsWithOptions:options];
+    self.imageManager = [[PHCachingImageManager alloc] init];
 }
 
 -(void) setupHeader {
@@ -60,11 +69,22 @@
 
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10.0;
+    return [self.assetsFetchResults count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     InfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellId" forIndexPath: indexPath];
+    PHAsset *asset = self.assetsFetchResults[indexPath.item];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:101];
+    
+    [self.imageManager requestImageForAsset:asset targetSize:imageView.frame.size contentMode:PHImageContentModeAspectFill options:nil resultHandler:^(UIImage *result, NSDictionary *info) {
+        
+    }
+
+    
+ 
+   
+    
     return cell;
 }
 
