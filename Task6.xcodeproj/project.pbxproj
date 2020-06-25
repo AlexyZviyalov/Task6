@@ -19,6 +19,7 @@
 		77A9D2F224A27FC9000FCD01 /* ViewControllerWithTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */; };
 		77A9D2F624A3F128000FCD01 /* GalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2F524A3F128000FCD01 /* GalleryViewController.m */; };
 		77A9D2FA24A3FA29000FCD01 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2F924A3FA29000FCD01 /* AboutViewController.m */; };
+		77A9D2FD24A4C8FA000FCD01 /* InfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77A9D2FC24A4C8FA000FCD01 /* InfoTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,8 @@
 		77A9D2F524A3F128000FCD01 /* GalleryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GalleryViewController.m; sourceTree = "<group>"; };
 		77A9D2F824A3FA29000FCD01 /* AboutViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		77A9D2F924A3FA29000FCD01 /* AboutViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		77A9D2FB24A4C8FA000FCD01 /* InfoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewCell.h; sourceTree = "<group>"; };
+		77A9D2FC24A4C8FA000FCD01 /* InfoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 			children = (
 				77A9D2F024A27FC9000FCD01 /* ViewControllerWithTable.h */,
 				77A9D2F124A27FC9000FCD01 /* ViewControllerWithTable.m */,
+				77A9D2FB24A4C8FA000FCD01 /* InfoTableViewCell.h */,
+				77A9D2FC24A4C8FA000FCD01 /* InfoTableViewCell.m */,
 			);
 			path = Screen2;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7708D89D24A0B45A00A8FC59 /* AppDelegate.m in Sources */,
+				77A9D2FD24A4C8FA000FCD01 /* InfoTableViewCell.m in Sources */,
 				7708D8AE24A0B45F00A8FC59 /* main.m in Sources */,
 				7708D8A024A0B45A00A8FC59 /* SceneDelegate.m in Sources */,
 				7708D8B924A10B1200A8FC59 /* IconViewTriangle.m in Sources */,
